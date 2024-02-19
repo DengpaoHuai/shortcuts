@@ -1,0 +1,6 @@
+Here you can rename all you old .js file into .jsx files.
+Under Windows : 
+Get-ChildItem *.js -Recurse | Rename-Item -NewName { $_.Name -replace '\.js$','.jsx' }
+
+Under Linux / MacOS : 
+find . -type f -name "*.js" -exec bash -c 'mv "$0" "${0%.js}.jsx"' {} \;
